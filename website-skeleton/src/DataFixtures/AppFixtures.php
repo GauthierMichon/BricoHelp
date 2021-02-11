@@ -12,7 +12,7 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $meuble = new Meuble();
-        $meuble->setRef("FR19092001")
+        $meuble->setRef("FR21032001")
                 ->SetName("Table de Chevet")
                 ->setOutils(['visseuse ou clé six pans'])
                 ->setImage("table_de_chevet.png")

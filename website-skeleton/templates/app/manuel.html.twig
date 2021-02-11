@@ -7,6 +7,9 @@
 {% for manuel in manuel %}
     <manuel>
     <h1>{{ manuel.name }}</h1>
+
+    <img src="{{ asset('images/' ~ manuel.Image) }}">
+
     <p>Etape:  {{ manuel.page }}<p>
     <img src="{{ manuel.image }}" alt="">
     {% for materiel in manuel.materiel %}
@@ -15,8 +18,17 @@
 
     </materiel>
     {% endfor %}
+    <button>Scanner les pièces</button><br><br>
 
-    <a class="btn btn-primary" href="{{path('manuel', {'name': manuel.name, 'page': manuel.page + 1})}}" >suivant</a>
+    {% if page != 1 %}
+        <a class="btn btn-primary" href="{{path('manuel', {'name': manuel.name, 'page': manuel.page - 1})}}" >précédent</a>
+    {% endif %}
+
+    {% if page != max %}
+        <a class="btn btn-primary" href="{{path('manuel', {'name': manuel.name, 'page': manuel.page + 1})}}" >suivant</a>
+    {% else %}
+        <a class="btn btn-primary" href="/search" >Terminer l'assemblage</a>
+    {% endif %}
     </manuel>
 {% endfor %}
 

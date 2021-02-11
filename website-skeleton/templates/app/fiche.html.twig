@@ -6,8 +6,13 @@
 
 {% for meuble in meuble %}
     <meuble>
-    <h1>{{ meuble.ref }}</h1>
-    <p>Nombre d'étape:  {{ meuble.etape }}<p>
+    <h1>{{ meuble.name }}</h1>
+
+    <img src="{{ asset('images/' ~ meuble.Image) }}" style = "max-width: 50%">
+
+    <h2>Nombre d'étape: </h2> <p>{{ meuble.etape }}<p>
+    
+    <h2>Outils nécessaires: </h2>
     {% for outils in meuble.outils %}
     <outils>
     <p> {{ outils }}</p>

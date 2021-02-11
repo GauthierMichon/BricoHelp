@@ -33,9 +33,29 @@ class Meuble
     private $etape;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
+    /**
      * @ORM\Column(type="json")
      */
     private $outils = [];
+
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    
 
     public function getId(): ?int
     {

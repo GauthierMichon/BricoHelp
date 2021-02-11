@@ -44,8 +44,21 @@ class AppController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(Manuel::class);
         $manuel = $repo->findBy(array('name'=> $name, "page" => $page));
 
+        $max = 0;
+
+        $pages = $repo->findBy(array('name'=> $name));
+
+        foreach($pages as $page_max) {
+            if ($page_max->getPage() > $max) {
+                $max = $page_max->getPage();
+            }
+        }
+
+
         return $this->render('app/manuel.html.twig', [
             'manuel' => $manuel,
+            'page' => $page,
+            'max' => $max
         ]);
     }
 }

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AppController!{% endblock %}
+
+{% block body %}
+
+{% for meuble in meuble %}
+    <meuble>
+    <h1>{{ meuble.ref }}</h1>
+    <p>Nombre d'étape:  {{ meuble.etape }}<p>
+    {% for outils in meuble.outils %}
+    <outils>
+    <p> {{ outils }}</p>
+
+    </outils>
+    {% endfor %}
+
+    <a class="btn btn-primary" href="{{path('manuel', {'name': meuble.name, 'page': 1})}}" >Voir</a>
+    
+    </meuble>
+{% endfor %}
+
+{% endblock %}

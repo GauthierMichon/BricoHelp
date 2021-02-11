@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AppController!{% endblock %}
+
+{% block body %}
+
+{% for manuel in manuel %}
+    <manuel>
+    <h1>{{ manuel.name }}</h1>
+    <p>Etape:  {{ manuel.page }}<p>
+    <img src="{{ manuel.image }}" alt="">
+    {% for materiel in manuel.materiel %}
+    <materiel>
+    <p> {{ materiel }}</p>
+
+    </materiel>
+    {% endfor %}
+
+    <a class="btn btn-primary" href="{{path('manuel', {'name': manuel.name, 'page': manuel.page + 1})}}" >suivant</a>
+    </manuel>
+{% endfor %}
+
+{% endblock %}

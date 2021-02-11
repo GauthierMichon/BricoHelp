@@ -7,6 +7,12 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="/search">BricoHelp</a>
+                
+                <input type="button" class="btn btn-primary my-2 my-sm-0" value="Retour" onclick="history.go(-1)"/>
+            </div>
+        </nav>
         <div class="container">
         {% block body %}{% endblock %}
         </div>

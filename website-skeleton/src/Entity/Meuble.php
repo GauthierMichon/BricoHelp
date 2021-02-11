@@ -23,9 +23,19 @@ class Meuble
     private $ref;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
      * @ORM\Column(type="integer")
      */
     private $etape;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $outils = [];
 
     public function getId(): ?int
     {
@@ -36,6 +46,7 @@ class Meuble
     {
         return $this->ref;
     }
+
 
     public function setRef(string $ref): self
     {
@@ -52,6 +63,33 @@ class Meuble
     public function setEtape(int $etape): self
     {
         $this->etape = $etape;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getOutils(): array
+    {
+        $outils = $this->outils;
+
+        return $outils;
+    }
+
+    public function setOutils(array $outils): self
+    {
+        $this->outils = $outils;
 
         return $this;
     }

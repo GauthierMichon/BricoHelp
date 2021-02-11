@@ -22,6 +22,7 @@
 {% for ref in ref %}
     <ref>
     <h1>{{ ref.ref }}</h1>
+    <a class="btn btn-primary" href="{{path('app', {'name': ref.name})}}" >Voir</a>
     </ref>
     {% endfor %}
 

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title%} Recherche{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+
+
+<div class="form-row align-items-end" >
+<div class="col">
+{{ form_row(form.ref) }}
+</div>
+
+<div class="col">
+<div class="form-group">
+<button type="submit" class="btn btn-primary disabled">Rechercher</button>
+</div>
+</div>
+</div>
+{{ form_end(form) }}
+{% for ref in ref %}
+    <ref>
+    <h1>{{ ref.ref }}</h1>
+    </ref>
+    {% endfor %}
+
+{% endblock %}
